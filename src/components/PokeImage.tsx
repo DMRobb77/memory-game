@@ -8,23 +8,17 @@ export const PokeImage: React.FC<PokeProps> = ({ id }) => {
   const [pokeImage, setPokeImage] = useState('');
   const [pokeName, setPokeName] = useState('');
 
-  // const fetchPokeImage = async () => {
-  //   try {
-  //     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-  //       mode: 'cors',
-  //     });
-  //     const data = await response.json();
-  //     setPokeImage(data.sprites.other['official-artwork'].front_default);
-  //     setPokeName(data.name);
-  //   } catch (error) {
-  //     console.error('Error fetching Pokemon image:', error);
-  //   }
-  // };
-
-  const fetchPokeImage = async (num: number) => {
-    const response = await import(`/src/assets/mockApiResponse${num}.json`);
-    setPokeImage(response.sprites.other['official-artwork'].front_default);
-    setPokeName(response.name);
+  const fetchPokeImage = async (id: number) => {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+        mode: 'cors',
+      });
+      const data = await response.json();
+      setPokeImage(data.sprites.other['official-artwork'].front_default);
+      setPokeName(data.name);
+    } catch (error) {
+      console.error('Error fetching Pokemon image:', error);
+    }
   };
 
   useEffect(() => {

@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { Card } from './Card';
 
 const pokeId = (): number => {
-  // return 151 + Math.floor(Math.random() * 100);
-  return Math.floor(1 + Math.random() * 12);
+  return 151 + Math.floor(Math.random() * 100);
 };
 
 const generatePokeArray = (): number[] => {
