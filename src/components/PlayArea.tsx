@@ -28,7 +28,7 @@ export const PlayArea: React.FC = () => {
   const shuffleArray = (array: number[]): number[] => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
   };
@@ -62,11 +62,16 @@ export const PlayArea: React.FC = () => {
 
   return (
     <>
-      <h1>Current score: {currentScore}</h1>
-      <h1>High Score: {highScore}</h1>
-      {pokeArray.map((pokemon) => {
-        return <Card key={pokemon} id={pokemon} handleClick={() => cardClicked(pokemon)} />;
-      })}
+      <header>
+        <h1>Memory Game</h1>
+        <h2>Current score: {currentScore}</h2>
+        <h2>High Score: {highScore}</h2>
+      </header>
+      <div className="play-area">
+        {pokeArray.map((pokemon) => {
+          return <Card key={pokemon} id={pokemon} handleClick={() => cardClicked(pokemon)} />;
+        })}
+      </div>
     </>
   );
 };

@@ -1,42 +1,38 @@
+* {
+  /* border: 1px red solid; */
+}
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
+  width: 1920px;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header * {
+  width: 24rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.play-area {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 10px;
 }
 
-.card {
-  padding: 2em;
+.poke-card {
+  justify-content: center;
+  border-radius: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+.poke-card img {
+  width: 16rem;
+  margin: 5px;
 }

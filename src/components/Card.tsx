@@ -7,7 +7,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ id, handleClick }) => {
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} className="poke-card">
       <PokeImage id={id} />
     </button>
   );
